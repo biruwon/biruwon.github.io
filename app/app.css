@@ -99,10 +99,23 @@ textarea {
     height: 32px;
 }
 
+.php-lang, .symfony-framework, .mysql-db, .jquery-framework, .git-vcs, .angularjs-framework {
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+}
+
 .github { background-image: url('img/github-icon.jpg'); }
 .twitter { background-image: url('img/twitter-icon.png'); }
 .linkedin { background-image: url('img/linkedin-icon.jpg'); }
 .gmail { background-image: url('img/gmail-icon.jpg'); }
+.php-lang { background-image: url('img/php-icon.jpg'); }
+.symfony-framework { background-image: url('img/symfony-icon.png'); }
+.mysql-db { background-image: url('img/mysql-icon.png'); }
+.jquery-framework { background-image: url('img/jquery-icon.jpg'); }
+.git-vcs { background-image: url('img/git-icon.jpg'); }
+.angularjs-framework { background-image: url('img/angularjs-icon.jpg'); }
 
 /* ==========================================================================
    Chrome Frame prompt
@@ -137,7 +150,7 @@ h2, p {
 }
 section {
     opacity: 0;
-	height: 360px;
+/*	height: 360px;*/
 }
 .loaded section,
 .no-js section {
@@ -180,12 +193,10 @@ main {
         text-align: center;
         position: relative;
     }
-    .hsContent h2, .hsText  {
+    .hsContent h2, .hsAbout, .hsSkills  {
         color: rgba(255, 255, 255, 1);
         background-color: rgba(0, 0, 0, 0.5);
         padding: 10px 5px;
-        font-size: 15px;
-        line-height: 23px;
         margin-bottom: 12px;
         font-weight: bold;
     }
@@ -363,10 +374,16 @@ main {
         text-align: left;
         padding: 0;
     }
-        .hsContent h2, .hsText  {
+        .hsContent h2, .hsAbout  {
             text-align: center;
             font-size: 20px;
             line-height: 38px;
+        }
+
+        .hsSkills {
+            text-align: center;
+            font-size: 18px;
+            line-height: 20px;
         }
 
     #slide-1 .hsContent {
