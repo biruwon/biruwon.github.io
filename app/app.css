@@ -117,6 +117,15 @@ textarea {
 .git-vcs { background-image: url('img/git-icon.jpg'); }
 .angularjs-framework { background-image: url('img/angularjs-icon.jpg'); }
 
+.trivago-logo {
+    background-image: url('img/trivago-logo.jpg');
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    width: 176px;
+    height: 68px;
+}
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -148,17 +157,7 @@ h2, p {
 .loading {
 	background: url('img/ico_loading.gif') no-repeat center center;
 }
-section {
-    opacity: 0;
-/*	height: 360px;*/
-}
-.loaded section,
-.no-js section {
-	opacity: 1;
-	-webkit-transition: opacity 300ms ease-out;
-	-moz-transition: opacity 300ms ease-out;
-	transition: opacity 300ms ease-out;
-}
+
 main {
 	overflow-x: hidden;
 }
@@ -193,17 +192,14 @@ main {
         text-align: center;
         position: relative;
     }
-    .hsContent h2, .hsAbout, .hsSkills  {
+    .hsContent h2, .hsAbout, .hsSkills, .hsTrivago  {
         color: rgba(255, 255, 255, 1);
         background-color: rgba(0, 0, 0, 0.5);
         padding: 10px 5px;
         margin-bottom: 12px;
         font-weight: bold;
     }
-/*    .hsContent p {
-        width: 80%;
-        color: #b2b2b2;
-    }*/
+
 	.hsContent a {
 		color: #b2b2b2;
 		text-decoration: underline;
@@ -374,7 +370,7 @@ main {
         text-align: left;
         padding: 0;
     }
-        .hsContent h2, .hsAbout  {
+        .hsContent h2, .hsAbout, .hsTrivago  {
             text-align: center;
             font-size: 20px;
             line-height: 38px;
