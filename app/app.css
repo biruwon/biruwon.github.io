@@ -126,6 +126,35 @@ textarea {
     height: 68px;
 }
 
+.grupeina-logo {
+    background-image: url('img/grupeina-logo.jpg');
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    width: 210px;
+    height: 50px;
+}
+
+.neventum-logo {
+    background-image: url('img/neventum-logo.jpg');
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    width: 184px;
+    height: 96px;
+    float: left;
+}
+
+.plataformazero-logo {
+    background-image: url('img/plataformazero-logo.jpg');
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    width: 154px;
+    height: 154px;
+    float: left;
+}
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -192,7 +221,7 @@ main {
         text-align: center;
         position: relative;
     }
-    .hsContent h2, .hsAbout, .hsSkills, .hsTrivago  {
+    .hsContent h2, .hsAbout, .hsSkills, .hsTrivago, .hsGrupeina, .hsNeventum, .hsPlataformazero, .hsUniversity  {
         color: rgba(255, 255, 255, 1);
         background-color: rgba(0, 0, 0, 0.5);
         padding: 10px 5px;
@@ -370,7 +399,7 @@ main {
         text-align: left;
         padding: 0;
     }
-        .hsContent h2, .hsAbout, .hsTrivago  {
+        .hsContent h2, .hsAbout, .hsTrivago, .hsGrupeina, .hsNeventum, .hsPlataformazero, .hsUniversity  {
             text-align: center;
             font-size: 20px;
             line-height: 38px;
