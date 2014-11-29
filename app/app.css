@@ -92,6 +92,18 @@ textarea {
     resize: vertical;
 }
 
+.github, .twitter, .linkedin, .gmail {
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.github { background-image: url('img/github-icon.jpg'); }
+.twitter { background-image: url('img/twitter-icon.png'); }
+.linkedin { background-image: url('img/linkedin-icon.jpg'); }
+.gmail { background-image: url('img/gmail-icon.jpg'); }
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -117,7 +129,7 @@ body {
 .no-js {
 	padding-top: 106px;
 }
-h2 {
+h2, p {
 	margin-top: 0;
 }
 .loading {
@@ -168,18 +180,19 @@ main {
         text-align: center;
         position: relative;
     }
-    .hsContent h2  {
-        color: #fff8de;
-        background-color: rgba(0,0,0,0.5);
+    .hsContent h2, .hsText  {
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
         padding: 10px 5px;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 23px;
         margin-bottom: 12px;
+        font-weight: bold;
     }
-    .hsContent p {
+/*    .hsContent p {
         width: 80%;
         color: #b2b2b2;
-    }
+    }*/
 	.hsContent a {
 		color: #b2b2b2;
 		text-decoration: underline;
@@ -350,17 +363,15 @@ main {
         text-align: left;
         padding: 0;
     }
-        .hsContent h2  {
-            font-size: 35px;
+        .hsContent h2, .hsText  {
+            text-align: center;
+            font-size: 20px;
             line-height: 38px;
         }
-        .hsContent p {
-            width: 400px;
-        }
+
     #slide-1 .hsContent {
         bottom: 200px;
         margin-left: -340px;
-        top: auto;
     }
     #slide-2 .hsContent {
         margin-left: -340px;
