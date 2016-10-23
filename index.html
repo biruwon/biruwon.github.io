@@ -1,192 +1,36 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="biruwon.github.io" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="biruwon.github.io" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="biruwon.github.io" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="biruwon.github.io" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My awesome resume</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app/app.css">
-      <style type="text/css">
-			body {
-				font-family: "Comic Sans MS", cursive, sans-serif
-			}
-		</style>
-</head>
-<body class="loading">
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+---
+layout: page
+description: "I write stuff...sometimes"
+---
 
-       	<main>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
 
-	        <section id="slide-1" class="homeSlide">
-	        	<div class="bcg"
-	        		data-center="background-position: 50% 0px;"
-	        		data-anchor-target="#slide-1">
-		        	<div class="hsContainer">
-			    		<div class="hsContent" data-center="bottom: 200px;" data-top="bottom: 1800px;"
-							 data-anchor-target="#slide-1 h2">
-				    		<h2>About</h2>
-								<div class="hsAbout">
-									<p>Hi! I'm Antonio Jesús, web developer, Athletic Club de Bilbao supporter and someone
-										who's always happy learning new things :)</p>
-									<p>You can follow me:</p>
-									<p>
-										<a target="_blank" href="http://twitter.com/biruwon"><span class="twitter"></span></a>
-										<a target="_blank" href="http://github.com/biruwon"><span class="github"></span></a>
-										<a target="_blank" href="http://www.linkedin.com/in/ajesus"><span class="linkedin"></span></a>
-										<a href="mailto:ajesus.etsii@gmail.com"><span class="gmail"></span></a>
-									</p>
-								</div>
-			    		</div>
-		        	</div>
-	        	</div>
-		    </section>
-
-			<section id="slide-2" class="homeSlide">
-				<div class="bcg"
-					data-center="background-position: 50% 10px;"
-					data-anchor-target="#slide-2"
-				>
-					<div class="hsContainer">
-						<div class="hsContent" data-center="bottom: 200px;" data-top="bottom: 1200px;"
-							 data-anchor-target="#slide-2 h2">
-							<h2>SKILLS</h2>
-							<div class="hsSkills">
-								<p>I've been working with these tools since I joined the web development:</p>
-								<p>
-									<a target="_blank" href="http://symfony.com"><span class="symfony-framework"></span></a>
-									<a target="_blank" href="http://php.net"><span class="php-lang"></span></a>
-									<a target="_blank" href="http://mysql.com"><span class="mysql-db"></span></a>
-									<a target="_blank" href="http://jquery.com	"><span class="jquery-framework"></span></a>
-									<a target="_blank" href="http://git-scm.com"><span class="git-vcs"></span></a>
-								</p>
-								<p>I really like testing and I'm trying to make TDD and BDD a way of coding(A long way still)</p>
-								<p>Right now I'm playing with AngularJS to improve my fronted skills</p>
-								<p>
-									<a target="_blank" href="http://angularjs.org"><span class="angularjs-framework"></span></a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="slide-3" class="homeSlide">
-				<div class="bcg"
-					data-center="background-position: 50% 0px;"
-					data-anchor-target="#slide-3"
-				>
-					<div class="hsContainer">
-						<div class="hsContent" data-center="bottom: 200px;" data-top="bottom: 1200px;"
-							 data-anchor-target="#slide-3 .trivago-logo">
-							<div class="trivago-logo"></div>
-							<div class="hsTrivago">
-								<p>This is my current company. In my day-to-day work I've been involved in a variety of projects.
-								From legacy code or Wordpress until a variety of Symfony projects like
-									<a target="_blank" href="http://www.trivago.com/community">community</a>.</p>
-								<p>If you want to help us growing, drop a line here or in
-									<a target="_blank" href="http://www.trivago.com/jobs">trivago</a>
-								</p>
-							</div>
-						</div>
-					</div>
-
-			    </div>
-			</section>
-
-			<section id="slide-4" class="homeSlide">
-				<div class="bcg"
-					data-center="background-position: 50% 0px;"
-					data-anchor-target="#slide-4"
-				>
-					<div class="hsContainer">
-						<div class="hsContent" data-center="bottom: 200px;" data-top="bottom: 1200px;"
-							 data-anchor-target="#slide-4 .grupeina-logo">
-							<div class="grupeina-logo"></div>
-							<div class="hsGrupeina">
-								<p>I worked there for a year and we built a tool to allow garage owner to have a web:
-									<a target="_blank" href="http://www.mygarageweb.com/">mygarageweb</a>
-									and two finders, for
-									<a target="_blank" href="http://www.buscadordetalleres.com/">garages</a> and
-									<a target="_blank" href="http://www.buscadordetalleres.com/search/offer/index">offers</a>
-									We used Symfony2, MongoDB, Elasticsearch and JQuery
-								</p>
-							</div>
-						</div>
-					</div>
-			    </div>
-			</section>
-
-			<section id="slide-5" class="homeSlide">
-				<div class="bcg"
-					 data-center="background-position: 50% 0px;"
-					 data-anchor-target="#slide-5"
-						>
-					<div class="hsContainer">
-						<div class="hsContent" data-center="bottom: 200px;" data-top="bottom: 1200px;"
-							 data-anchor-target="#slide-5 .neventum-logo">
-							<div class="neventum-logo"></div>
-							<div class="hsNeventum">
-								<p>The idea was to rewrite <a target="_blank" href="http://www.neventum.com/">neventum</a>
-									using Symfony2. I learned a bit of continuous integration with Jenkins and I did some
-									test using PHPUnit and Behat
-								</p>
-							</div>
-							<div class="plataformazero-logo"></div>
-							<div class="hsPlataformazero">
-								<p>Intership of a month before moving to Barcelona. I created a Joomla component for Facebook
-									in <a target="_blank" href="http://www.plataformazero.es/">plataformazero</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="slide-6" class="homeSlide">
-				<div class="bcg"
-					 data-center="background-position: 50% 0px;"
-					 data-anchor-target="#slide-6"
-						>
-					<div class="hsContainer">
-						<div class="hsContent" data-center="bottom: 200px;" data-top="bottom: 1200px;"
-							 data-anchor-target="#slide-6 h2">
-							<h2>University</h2>
-							<div class="hsUniversity">
-								<p>I did my degree in the <a target="_blank" href="http://www.informatica.us.es">University of Sevilla</a>
-									where I studied Technical Engineering in Computer Systems which I finished in 2012
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		</main>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="app/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-  <script src="app/bower_components/html5-boilerplate/js/vendor/jquery-1.10.2.min.js"></script>
-  <script src="app/bower_components/angular/angular.js"></script>
-  <script src="app/bower_components/angular-route/angular-route.js"></script>
-  <script src="app/app.js"></script>
-  <script src="app/view1/view1.js"></script>
-  <script src="app/view2/view2.js"></script>
-  <script src="app/components/version/version.js"></script>
-  <script src="app/components/version/version-directive.js"></script>
-  <script src="app/components/version/interpolate-filter.js"></script>
-
-  <script src="app/js/imagesloaded.js"></script>
-  <script src="app/js/skrollr.js"></script>
-  <script src="app/js/_main.js"></script>
-</body>
-</html>
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
