@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Some common questions about testing"
-subtitle:   "test test"
+#subtitle:   "test test"
 #date:       2014-06-10 12:00:00
 author:     "Antonio Jesús"
 header-img: "img/post-bg-01.jpg"
@@ -9,10 +9,8 @@ header-img: "img/post-bg-01.jpg"
 
 <p>On this post I'll try to answer some of the questions that I asked myself when writing tests. There are plenty of
 information on the internet about what's an unit test, some katas to start with it, etc but there is a big different
-between the typical example and production code</p>
-
-<p>I won't talk about what's an unit or an integration test, or a mock, or what's is TDD as there are enough information
-out there</p>
+between the typical example and production code. You'll find too what's an integration test, or a mock, or what's TDD as
+there are enough information out there</p>
 
 <h2 class="section-heading">To mock or not to mock</h2>
 
@@ -87,15 +85,53 @@ but not thinking about what they are doing.</p>
 <p>I usually exclude from the coverage:</p>
 
 <p>Entities, DTOs, Queries and Repositories, specific classes from the framework and the glue between the client and the
-backend side like Controllers (more about it in the next point)</p>
+backend side like Controllers.</p>
 
-<h2 class="section-heading">Funny tests</h2>
+<h2 class="section-heading">Other important points</h2>
 
-REMOVE ME!!!!
+<p></p>
 
-<p>On this last point I would like to mention an example of an strange case: a test checking the integration between the
-Redis library and a wrapper of it. So the code is trying to connect with a host/port and in case that it can't be done
-it throws an exception. For the sake of coverage of this exception and as this was an integration test, not unit, the
-test was trying to connect to a random port not used by Redis, 9999. "On my machine is working" (TM) but when it's
-executed on the Jenkins machine failed. The reason was some other guy was using this port at this time for another job
-so the test was saying "Connection success" and breaking.</p>
+<h4>Law of Demeter</h4>
+
+<p>This is how the <a href="https://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> is
+summarized:</p>
+
+<blockquote>
+- You can play with yourself.
+- You can play with your own toys (but you can't take them apart),
+- You can play with toys that were given to you.
+- And you can play with toys you've made yourself.
+</blockquote>
+
+<p>Basically it says to avoid method chains, to avoid using a getter from an injected object which returns another object
+with another getter. Let say User->getCountry()->getCity()->getName(), this is usually solved having a city property
+in the User object</p>
+
+<h4>How to test APIs?</h4>
+
+<p>As you want to know if the interaction with the API is working properly but you can't use a production environment for
+that, you can build your own API mock server. You can simulate the API behaviour writing some blueprints with for
+example <a href="https://github.com/apiaryio" target="_blank">Apiary</a>. With that you'll have a way to test your API
+integrations or prototype a new one.</p>
+
+<p>One important thing if you're using internals APIs and not the one of Twitter for example, is that the integration
+tests you're writing can be executed for the other teams building these APis which is a fast way to know about breaking
+changes or possible bugs.</p>
+
+<h4>What time is it?</h4>
+
+<p>When dealing with tests using some functions time related you can be on trouble if you can't freeze the time. For
+that already exists multiple libraries or built in classes that can help you depending of the language/framework you use.
+For example, on symfony, I'm using <a href="https://github.com/symfony/phpunit-bridge/blob/master/ClockMock.php"
+target="_blank">ClockMock</a>.</p>
+
+<p>This help you to avoid a test failing on a command that can be executed only the first day of the month. Lately
+we were having some tests failing in our test suite depending of the timezone they were executed. Try to change your
+timezone to something like UTC+5 and execute it to be sure.</p>
+
+
+
+
+
+
+
